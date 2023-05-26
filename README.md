@@ -172,6 +172,36 @@ module.exports = {
 }
 ```
 
+## Jest and React Testing Library
+
+```
+npx expo install jest-expo jest
+yarn add -D @types/jest
+npm pkg set scripts.test="jest"
+```
+
+Add to pacakge.json:
+
+```
+"jest": {
+  "preset": "jest-expo",
+  "transformIgnorePatterns": [
+    "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
+  ]
+}
+```
+
+```
+yarn add -D eslint-plugin-jest @testing-library/react-native @testing-library/jest-native eslint-plugin-testing-library
+```
+
+Add to .eslintrc.js:
+
+```
+extends: ['plugin:testing-library/react'],
+plugins: ['jest', 'testing-library']
+```
+
 ## Running Expo
 
 ```
