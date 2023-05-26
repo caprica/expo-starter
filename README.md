@@ -26,6 +26,38 @@ Edit tsconfig.json:
 }
 ```
 
+### Prettier
+
+```
+yarn add -D prettier
+npm pkg set scripts.format="prettier --write './**/*{ts,tsx}'"
+```
+
+Create .prettierrc:
+
+```
+{
+    "semi": false,
+    "useTabs": false,
+    "tabWidth": 4,
+    "printWidth": 120,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "trailingComma": "all",
+    "quoteProps": "consistent"
+}
+```
+
+Run prettier:
+
+```
+yarn format
+```
+
 ## Running Expo
 
 ```
