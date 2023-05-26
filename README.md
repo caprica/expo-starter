@@ -2,6 +2,14 @@
 
 A starter project for a React Native application with Expo and Typescript.
 
+## Steps for developers after cloning the project
+
+### Initialse the git pre-commit hook for Husky
+
+```
+yarn prepare
+```
+
 ## Steps used to create this starter project
 
 ### Create expo application
@@ -134,6 +142,34 @@ Run combined linting:
 
 ```
 yarn lint
+```
+
+### Husky
+
+```
+yarn add -D husky lint-staged
+npm pkg set scripts.prepare="husky install"
+yarn prepare
+npx husky add .husky/pre-commit 'npx --no-install lint-staged'
+```
+
+Create .lintstagedrc.js:
+
+```
+const path = require('path')
+
+const prettierCommand = (filenames) =>
+    `prettier --write ${filenames.map((f) => path.relative(process.cwd(), f)).join(' ')}`
+
+const eslintCommand = (filenames) =>
+    `yarn eslint ${filenames.map((f) => path.relative(process.cwd(), f)).join(' ')}`
+
+const checkTypescriptCommand = () =>
+    `yarn check-typescript`
+
+module.exports = {
+    '*.{ts,tsx}': [prettierCommand, eslintCommand, checkTypescriptCommand],
+}
 ```
 
 ## Running Expo
