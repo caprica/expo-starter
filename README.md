@@ -206,10 +206,46 @@ extends: ['plugin:testing-library/react'],
 plugins: ['jest', 'testing-library']
 ```
 
+## Expo Router
+
+```
+npx expo install expo-router react-native-screens expo-linking expo-constants react-native-gesture-handler
+```
+
+In package.json, change the "main" entry point:
+
+```
+"main": "index.ts"
+```
+
+Create index.ts:
+
+```
+import 'expo-router/entry'
+```
+
+Change app.json:
+
+```
+{
+  "expo": {
+    "scheme": "starter"
+  }
+}
+```
+
+Note that "scheme" is used to identify the deep-linking scheme identifier for the application, this should be e.g. the lower-case application name.
+
 ## Running Expo
 
 ```
 npx expo start
+```
+
+Or:
+
+```
+npx expo --clean
 ```
 
 Follow the instructions in the terminal to run the application on your device.
