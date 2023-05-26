@@ -211,3 +211,7 @@ npx expo start
 Follow the instructions in the terminal to run the application on your device.
 
 Note that you may need to use the "r | reload app" option.
+
+## References
+
+https://dev.to/vladimirvovk/starting-react-native-project-in-2023-2le
