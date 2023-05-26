@@ -85,6 +85,45 @@ Run the typescript compiler:
 yarn check-typescript
 ```
 
+### ESLint
+
+```
+yarn add -D eslint-config-universe
+yarn add -D eslint
+yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-react-hooks eslint-import-resolver-typescript
+npm pkg set scripts.eslint:all="eslint './**/*{ts,tsx}'"
+```
+
+Create .eslintrc.js:
+
+```
+module.exports = {
+  extends: ['universe', 'universe/shared/typescript-analysis', 'plugin:react-hooks/recommended'],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx', '*.d.ts'],
+      parserOptions: {
+        project: './tsconfig.json',
+      },
+    },
+  ],
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
+  },
+  globals: {
+    __dirname: true,
+  },
+}
+```
+
+Run ESLint:
+
+```
+yarn eslint:all
+```
+
 ## Running Expo
 
 ```
