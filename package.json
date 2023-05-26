@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "format": "prettier --write './**/*{ts,tsx}'",
     "check-typescript": "tsc --noEmit",
-    "eslint:all": "eslint './**/*{ts,tsx}'"
+    "eslint:all": "eslint './**/*{ts,tsx}'",
+    "lint": "yarn eslint:all && yarn check-typescript"
   },
   "dependencies": {
     "expo": "~48.0.15",

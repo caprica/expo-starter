@@ -124,6 +124,18 @@ Run ESLint:
 yarn eslint:all
 ```
 
+### Combine linting and type-checking
+
+```
+npm pkg set scripts.lint="yarn eslint:all && yarn check-typescript"
+```
+
+Run combined linting:
+
+```
+yarn lint
+```
+
 ## Running Expo
 
 ```
