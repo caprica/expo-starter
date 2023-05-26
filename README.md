@@ -73,6 +73,18 @@ indent_style = space
 indent_size = 4
 ```
 
+### Check Typescript
+
+```
+npm pkg set scripts.check-typescript="tsc --noEmit"
+```
+
+Run the typescript compiler:
+
+```
+yarn check-typescript
+```
+
 ## Running Expo
 
 ```
