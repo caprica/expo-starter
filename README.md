@@ -10,6 +10,10 @@ A starter project for a React Native application with Expo and Typescript.
 yarn prepare
 ```
 
+### Visual Studio Code extensions
+
+ - React Native Tools
+
 ## Steps used to create this starter project
 
 ### Create expo application
