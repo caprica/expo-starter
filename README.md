@@ -212,6 +212,25 @@ Follow the instructions in the terminal to run the application on your device.
 
 Note that you may need to use the "r | reload app" option.
 
+## Gotchas!
+
+### Symbolic Links and the workspace directory
+
+If the workspace directory is a symbolic link, then Visual Studio Code will complain about a mismatch in configuration between ESLint and Typescript:
+
+```
+Parsing error: ESLint was configured to run on `/home/coder/workspaces/expo-starter/App.tsx` using `parserOptions.project`: <tsconfigRootDir>/tsconfig.json
+However, that TSConfig does not include this file. Either:
+- Change ESLint's list of included files to not include this file
+- Change that TSConfig to include this file
+- Create a new TSConfig that includes this file and include it in your parserOptions.project
+See the typescript-eslint docs for more info: https://typescript-eslint.io/linting/troubleshooting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file
+```
+
+In this example, the "workspaces" directory is a symbolic link.
+
+*I do not have a solution for this yet.*
+
 ## References
 
 https://dev.to/vladimirvovk/starting-react-native-project-in-2023-2le
