@@ -236,6 +236,12 @@ Change app.json:
 
 Note that "scheme" is used to identify the deep-linking scheme identifier for the application, this should be e.g. the lower-case application name.
 
+Remove obsolete files, App.tsx is superseded by app/index.tsx:
+
+```
+rm App.tsx App.test.tsx
+```
+
 ## Running Expo
 
 ```
