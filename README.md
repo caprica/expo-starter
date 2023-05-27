@@ -242,6 +242,27 @@ Remove obsolete files, App.tsx is superseded by app/index.tsx:
 rm App.tsx App.test.tsx
 ```
 
+## React Native Elements
+
+```
+yarn add @rneui/themed @rneui/base
+```
+
+Update the transform ignore pattern in package.json to add these two new packages by appending "|@rneui/base|@rneui/themed":
+
+```
+"jest": {
+  "preset": "jest-expo",
+  "transformIgnorePatterns": [
+    "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|@rneui/base|@rneui/themed)"
+  ]
+}
+```
+
+Add theme provider component to app/index.tsx.
+
+*Theme changes are _not_ hot-reloaded, shake the device (or CTRL+M in the emulator) to get the reload menu or choose reload from the Expo terminal.*
+
 ## Running Expo
 
 ```
