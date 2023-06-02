@@ -272,7 +272,7 @@ npx expo start
 Or:
 
 ```
-npx expo --clean
+npx expo --clear
 ```
 
 Follow the instructions in the terminal to run the application on your device.
